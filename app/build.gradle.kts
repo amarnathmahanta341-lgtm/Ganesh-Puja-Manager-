@@ -1,17 +1,39 @@
-plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-}
+name: Build Ganesh Puja Manager APK
 
-android {
-    namespace = "in.ganeshpuja.manager"
-    compileSdk = 35
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
-    defaultConfig {
-        applicationId = "in.ganeshpuja.manager"
-        minSdk = 23
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
-    }
-}
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '8.9'
+
+      - name: Build debug APK
+        run: gradle assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: GaneshPujaManager-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
