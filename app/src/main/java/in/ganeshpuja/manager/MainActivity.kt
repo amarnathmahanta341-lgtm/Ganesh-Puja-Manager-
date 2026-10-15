@@ -1,4 +1,4 @@
-package in.Ganeshpuja.manager
+ in.ganeshpuja.manager
 
 import android.app.Activity
 import android.os.Bundle
