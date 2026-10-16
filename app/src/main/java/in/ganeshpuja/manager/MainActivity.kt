@@ -1,3 +1,4 @@
+
 package `in`.ganeshpuja.manager
 
 import android.app.Activity
@@ -24,12 +25,13 @@ class MainActivity : Activity() {
         title.gravity = Gravity.CENTER
         layout.addView(title)
 
-        val subtitle = TextView(this)
-        subtitle.text = "ଚାନ୍ଦା • ଖର୍ଚ୍ଚ • ରିପୋର୍ଟ"
-        subtitle.textSize = 18f
-        subtitle.setTextColor(Color.BLACK)
-        subtitle.gravity = Gravity.CENTER
-        layout.addView(subtitle)
+        val message = TextView(this)
+        message.text = "ଆପ୍ ସଫଳତାର ସହ ଚାଲୁଛି!"
+        message.textSize = 20f
+        message.setTextColor(Color.BLACK)
+        message.gravity = Gravity.CENTER
+        message.setPadding(0, 30, 0, 0)
+        layout.addView(message)
 
         setContentView(layout)
     }
