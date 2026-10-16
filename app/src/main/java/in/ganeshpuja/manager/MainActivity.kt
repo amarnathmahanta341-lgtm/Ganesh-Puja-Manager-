@@ -192,26 +192,7 @@ class MainActivity : Activity() {
         })
     }
 
-    private fun adminPage() {
-    startPage("🔐 Admin ପରିଚାଳନା")
-
-    content.addView(
-        text("Admin ପୃଷ୍ଠା ସଫଳତାର ସହ ଖୋଲିଛି!")
-    )
-
-    content.addView(
-        button("📊 ରିପୋର୍ଟ ଦେଖନ୍ତୁ") {
-            reportPage()
-        }
-    )
-
-    content.addView(
-        button("👥 ସଦସ୍ୟ ପରିଚାଳନା") {
-            membersPage()
-        }
-    )
-    }
-
+    
     private fun toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
