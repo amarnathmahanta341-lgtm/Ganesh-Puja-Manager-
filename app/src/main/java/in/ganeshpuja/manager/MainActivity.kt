@@ -193,9 +193,23 @@ class MainActivity : Activity() {
     }
 
     private fun adminPage() {
-        startPage("Admin")
-        content.addView(text("ଏହା ପ୍ରାରମ୍ଭିକ Admin ପୃଷ୍ଠା।"))
-        content.addView(text("ଏବେ ପ୍ରକୃତ ପାସୱାର୍ଡ ସୁରକ୍ଷା ଯୋଡ଼ାଯାଇନାହିଁ।"))
+    startPage("🔐 Admin ପରିଚାଳନା")
+
+    content.addView(
+        text("Admin ପୃଷ୍ଠା ସଫଳତାର ସହ ଖୋଲିଛି!")
+    )
+
+    content.addView(
+        button("📊 ରିପୋର୍ଟ ଦେଖନ୍ତୁ") {
+            reportPage()
+        }
+    )
+
+    content.addView(
+        button("👥 ସଦସ୍ୟ ପରିଚାଳନା") {
+            membersPage()
+        }
+    )
     }
 
     private fun toast(message: String) {
